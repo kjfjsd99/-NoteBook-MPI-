@@ -1,54 +1,54 @@
-"# ¦bNoteBook¤W°õ¦æMPIµ{¦¡µ§°O" 
-¤F¸Ñ¡I¦pªG±z¨S¦³²{¦¨ªº MPI µ{¦¡·½½X¡A³o¸Ì·|¥[¤J¤@­ÓÂ²³æªº MPI ½d¨Òµ{¦¡¡A¨Ã¥B®Ú¾Ú¦¹½d¨Ò¨Ó§ï¥¿¤§«eªºµ§°O¡C³o¥÷µ§°O±N¥]¬A±qÀY¶}©l½s¼g MPI µ{¦¡ªº¨BÆJ¡C
+"# åœ¨NoteBookä¸ŠåŸ·è¡ŒMPIç¨‹å¼ç­†è¨˜" 
+é€™ä»½ç­†è¨˜å°‡åŒ…æ‹¬å¾žé ­é–‹å§‹ç·¨å¯« MPI ç¨‹å¼çš„æ­¥é©Ÿã€‚
 
 ---
 
-### ¨BÆJ 1¡Gµù¥U¨Ã¶i¤J Play with Docker
-1. **µù¥U©Mµn¿ý**
-   - ³X°Ý [Play with Docker](https://labs.play-with-docker.com/) ºô¯¸¡C
-   - ¨Ï¥Î±zªº **Google ±b¸¹** ¶i¦æµn¿ý¡C
+### æ­¥é©Ÿ 1ï¼šè¨»å†Šä¸¦é€²å…¥ Play with Docker
+1. **è¨»å†Šå’Œç™»éŒ„**
+   - è¨ªå• [Play with Docker](https://labs.play-with-docker.com/) ç¶²ç«™ã€‚
+   - ä½¿ç”¨æ‚¨çš„ **Google å¸³è™Ÿ** é€²è¡Œç™»éŒ„ã€‚
 
-2. **³Ð«Ø·s¹êÅç**
-   - µn¿ý«áÂI¿ï **"Start a new session"**¡C
-   - ³Ð«Ø¤@­Ó·s¹êÅç¨ÃÀò¨ú²×ºÝ¡C
+2. **å‰µå»ºæ–°å¯¦é©—**
+   - ç™»éŒ„å¾Œé»žé¸ **"Start a new session"**ã€‚
+   - å‰µå»ºä¸€å€‹æ–°å¯¦é©—ä¸¦ç²å–çµ‚ç«¯ã€‚
 
 ---
 
-### ¨BÆJ 2¡G³Ð«Ø¨Ã³]¸m Docker ºôµ¸
-MPI »Ý­n®e¾¹¤§¶¡ªº¤¬Áp¡A¬°¦¹»Ý­n³Ð«Ø¤@­Ó¦Û©w¸qªº Docker ºôµ¸¡C
+### æ­¥é©Ÿ 2ï¼šå‰µå»ºä¸¦è¨­ç½® Docker ç¶²çµ¡
+MPI éœ€è¦å®¹å™¨ä¹‹é–“çš„äº’è¯ï¼Œç‚ºæ­¤éœ€è¦å‰µå»ºä¸€å€‹è‡ªå®šç¾©çš„ Docker ç¶²çµ¡ã€‚
 
-1. ¦b²×ºÝ¿é¤J¥H¤U©R¥O¨Ó³Ð«Øºôµ¸¡G
+1. åœ¨çµ‚ç«¯è¼¸å…¥ä»¥ä¸‹å‘½ä»¤ä¾†å‰µå»ºç¶²çµ¡ï¼š
 
    ```bash
    docker network create mpi_network
    ```
 
-   ¦pªG³o¤@¨B¦¨¥\¡A±z·|¬Ý¨ìÃþ¦ü¥H¤Uªº°T®§¡G
+   å¦‚æžœé€™ä¸€æ­¥æˆåŠŸï¼Œæ‚¨æœƒçœ‹åˆ°é¡žä¼¼ä»¥ä¸‹çš„è¨Šæ¯ï¼š
    ```
    mpi_network
    ```
 
 ---
 
-### ¨BÆJ 3¡G¤U¸ü MPI Docker ¬M¹³
-¦b Docker ¤¤¹B¦æ MPI µ{¦¡¤§«e¡A»Ý­n¨Ï¥Î¾A¦Xªº MPI ¬M¹³¡C±z¿ï¾Ü¤F `mfisherman/openmpi` ³o­Ó¬M¹³¡C
+### æ­¥é©Ÿ 3ï¼šä¸‹è¼‰ MPI Docker æ˜ åƒ
+åœ¨ Docker ä¸­é‹è¡Œ MPI ç¨‹å¼ä¹‹å‰ï¼Œéœ€è¦ä½¿ç”¨é©åˆçš„ MPI æ˜ åƒã€‚æ‚¨é¸æ“‡äº† `mfisherman/openmpi` é€™å€‹æ˜ åƒã€‚
 
-1. ¤U¸ü MPI Docker ¬M¹³¡G
+1. ä¸‹è¼‰ MPI Docker æ˜ åƒï¼š
 
    ```bash
    docker pull mfisherman/openmpi
    ```
 
-   ³o·|±q Docker Hub ©Ô¨ú `mfisherman/openmpi` ¬M¹³¡C
+   é€™æœƒå¾ž Docker Hub æ‹‰å– `mfisherman/openmpi` æ˜ åƒã€‚
 
 ---
 
-### ¨BÆJ 4¡G³Ð«Ø©M¹B¦æ MPI ®e¾¹
-±µ¤U¨Ó¡A±z»Ý­n³Ð«Ø¨Ã¹B¦æ´X­Ó®e¾¹¡AÅý¥¦­Ì¤¬¬Û³s±µ¡A¨Ã°õ¦æ MPI µ{¦¡¡C
+### æ­¥é©Ÿ 4ï¼šå‰µå»ºå’Œé‹è¡Œ MPI å®¹å™¨
+æŽ¥ä¸‹ä¾†ï¼Œæ‚¨éœ€è¦å‰µå»ºä¸¦é‹è¡Œå¹¾å€‹å®¹å™¨ï¼Œè®“å®ƒå€‘äº’ç›¸é€£æŽ¥ï¼Œä¸¦åŸ·è¡Œ MPI ç¨‹å¼ã€‚
 
-1. **³Ð«Ø¨Ã¹B¦æ¤T­Ó MPI ®e¾¹**¡G
+1. **å‰µå»ºä¸¦é‹è¡Œä¸‰å€‹ MPI å®¹å™¨**ï¼š
    
-   ¿é¤J¥H¤U©R¥O¨Ó¹B¦æ¤T­Ó®e¾¹¡A¨Ã½T«O¥¦­Ì³£¥[¤J¬Û¦Pªººôµ¸¡C
+   è¼¸å…¥ä»¥ä¸‹å‘½ä»¤ä¾†é‹è¡Œä¸‰å€‹å®¹å™¨ï¼Œä¸¦ç¢ºä¿å®ƒå€‘éƒ½åŠ å…¥ç›¸åŒçš„ç¶²çµ¡ã€‚
 
    ```bash
    docker run -d --name mpi_container_1 --network mpi_network mfisherman/openmpi
@@ -56,45 +56,45 @@ MPI »Ý­n®e¾¹¤§¶¡ªº¤¬Áp¡A¬°¦¹»Ý­n³Ð«Ø¤@­Ó¦Û©w¸qªº Docker ºôµ¸¡C
    docker run -d --name mpi_container_3 --network mpi_network mfisherman/openmpi
    ```
 
-2. ¦pªG®e¾¹±Ò°Ê¦¨¥\¡A±zÀ³¸Ó·|¬Ý¨ì®e¾¹ ID¡]¦p `32c0cd9ccccb...`¡^ªº¿é¥X¡C
+2. å¦‚æžœå®¹å™¨å•Ÿå‹•æˆåŠŸï¼Œæ‚¨æ‡‰è©²æœƒçœ‹åˆ°å®¹å™¨ IDï¼ˆå¦‚ `32c0cd9ccccb...`ï¼‰çš„è¼¸å‡ºã€‚
 
-3. **ÀË¬d®e¾¹ª¬ºA**¡G
+3. **æª¢æŸ¥å®¹å™¨ç‹€æ…‹**ï¼š
    
-   ¨Ï¥Î¥H¤U©R¥O¨Ó¬d¬Ý®e¾¹¬O§_¹B¦æ¡G
+   ä½¿ç”¨ä»¥ä¸‹å‘½ä»¤ä¾†æŸ¥çœ‹å®¹å™¨æ˜¯å¦é‹è¡Œï¼š
 
    ```bash
    docker ps
    ```
 
-   ³oÀ³¸ÓÅã¥Ü¥X¤T­Ó¹B¦æ¤¤ªº®e¾¹¡C¦pªG¨S¦³¡A½Ð¨Ï¥Î¥H¤U©R¥O¬d¬Ý©Ò¦³®e¾¹¡]¥]¬A¤w°±¤îªº®e¾¹¡^¡G
+   é€™æ‡‰è©²é¡¯ç¤ºå‡ºä¸‰å€‹é‹è¡Œä¸­çš„å®¹å™¨ã€‚å¦‚æžœæ²’æœ‰ï¼Œè«‹ä½¿ç”¨ä»¥ä¸‹å‘½ä»¤æŸ¥çœ‹æ‰€æœ‰å®¹å™¨ï¼ˆåŒ…æ‹¬å·²åœæ­¢çš„å®¹å™¨ï¼‰ï¼š
 
    ```bash
    docker ps -a
    ```
 
-   ­Y®e¾¹¥¼¹B¦æ¡A¬d¬Ý®e¾¹¤é»x¨Ó§ä¥X¿ù»~¡G
+   è‹¥å®¹å™¨æœªé‹è¡Œï¼ŒæŸ¥çœ‹å®¹å™¨æ—¥èªŒä¾†æ‰¾å‡ºéŒ¯èª¤ï¼š
 
    ```bash
    docker logs <container_name>
    ```
 
-   ³o¼Ë¯àÀ°§U±z¬d¬Ý®e¾¹±Ò°Ê¹Lµ{¤¤ªº¿ù»~«H®§¡C
+   é€™æ¨£èƒ½å¹«åŠ©æ‚¨æŸ¥çœ‹å®¹å™¨å•Ÿå‹•éŽç¨‹ä¸­çš„éŒ¯èª¤ä¿¡æ¯ã€‚
 
 ---
 
-### ¨BÆJ 5¡G½s¼gÂ²³æªº MPI µ{¦¡
-¦pªG±z¨S¦³ MPI µ{¦¡¡A³o¸Ì´£¨Ñ¤@­ÓÂ²³æªº **Hello World** µ{¦¡½d¨Ò¡A±z¥i¥H¥Î¥¦¨Ó´ú¸Õ±zªº MPI Àô¹Ò¡C
+### æ­¥é©Ÿ 5ï¼šç·¨å¯«ç°¡å–®çš„ MPI ç¨‹å¼
+å¦‚æžœæ‚¨æ²’æœ‰ MPI ç¨‹å¼ï¼Œé€™è£¡æä¾›ä¸€å€‹ç°¡å–®çš„ **Hello World** ç¨‹å¼ç¯„ä¾‹ï¼Œæ‚¨å¯ä»¥ç”¨å®ƒä¾†æ¸¬è©¦æ‚¨çš„ MPI ç’°å¢ƒã€‚
 
-1. **³Ð«Ø `hello_mpi.c` µ{¦¡**¡G
+1. **å‰µå»º `hello_mpi.c` ç¨‹å¼**ï¼š
 
-   ¶i¤J¥ô¦ó¤@­Ó®e¾¹¡A¨Ã³Ð«Ø¤@­Ó·sªº C µ{¦¡ `hello_mpi.c`¡G
+   é€²å…¥ä»»ä½•ä¸€å€‹å®¹å™¨ï¼Œä¸¦å‰µå»ºä¸€å€‹æ–°çš„ C ç¨‹å¼ `hello_mpi.c`ï¼š
 
    ```bash
    docker exec -it mpi_container_1 bash
    nano hello_mpi.c
    ```
 
-   µM«á¿é¤J¥H¤UÂ²³æªº MPI µ{¦¡½X¡G
+   ç„¶å¾Œè¼¸å…¥ä»¥ä¸‹ç°¡å–®çš„ MPI ç¨‹å¼ç¢¼ï¼š
 
    ```c
    #include <stdio.h>
@@ -103,58 +103,58 @@ MPI »Ý­n®e¾¹¤§¶¡ªº¤¬Áp¡A¬°¦¹»Ý­n³Ð«Ø¤@­Ó¦Û©w¸qªº Docker ºôµ¸¡C
    int main(int argc, char *argv[]) {
        int rank, size;
 
-       // ªì©l¤Æ MPI
+       // åˆå§‹åŒ– MPI
        MPI_Init(&argc, &argv);
        
-       // Àò¨ú·í«e¶iµ{ªº rank ©MÁ`¶iµ{¼Æ¶q
+       // ç²å–ç•¶å‰é€²ç¨‹çš„ rank å’Œç¸½é€²ç¨‹æ•¸é‡
        MPI_Comm_rank(MPI_COMM_WORLD, &rank);
        MPI_Comm_size(MPI_COMM_WORLD, &size);
 
-       // ¨C­Ó¶iµ{¥´¦L¦Û¤vªº°T®§
+       // æ¯å€‹é€²ç¨‹æ‰“å°è‡ªå·±çš„è¨Šæ¯
        printf("Hello from process %d of %d\n", rank, size);
 
-       // µ²§ô MPI
+       // çµæŸ MPI
        MPI_Finalize();
        
        return 0;
    }
    ```
 
-   ³o­Óµ{¦¡±N·|ªì©l¤Æ MPI Àô¹Ò¡A¨ÃÅý¨C­Ó¶iµ{¥´¦L¥X¨ä `rank`¡]¶iµ{½s¸¹¡^©MÁ`¶iµ{¼Æ¶q `size`¡C
+   é€™å€‹ç¨‹å¼å°‡æœƒåˆå§‹åŒ– MPI ç’°å¢ƒï¼Œä¸¦è®“æ¯å€‹é€²ç¨‹æ‰“å°å‡ºå…¶ `rank`ï¼ˆé€²ç¨‹ç·¨è™Ÿï¼‰å’Œç¸½é€²ç¨‹æ•¸é‡ `size`ã€‚
 
-2. **«O¦s¨Ã°h¥X**¡G
-   - «ö `Ctrl + X` «O¦s¨Ã°h¥X `nano` ½s¿è¾¹¡C
+2. **ä¿å­˜ä¸¦é€€å‡º**ï¼š
+   - æŒ‰ `Ctrl + X` ä¿å­˜ä¸¦é€€å‡º `nano` ç·¨è¼¯å™¨ã€‚
 
 ---
 
-### ¨BÆJ 6¡G½sÄ¶ MPI µ{¦¡
-1. **½sÄ¶µ{¦¡**¡G
+### æ­¥é©Ÿ 6ï¼šç·¨è­¯ MPI ç¨‹å¼
+1. **ç·¨è­¯ç¨‹å¼**ï¼š
 
-   ¦b®e¾¹¤¤½sÄ¶ `hello_mpi.c` µ{¦¡¡G
+   åœ¨å®¹å™¨ä¸­ç·¨è­¯ `hello_mpi.c` ç¨‹å¼ï¼š
 
    ```bash
    mpicc hello_mpi.c -o hello_mpi
    ```
 
-   ³o·|¥Í¦¨¥i°õ¦æÀÉ®× `hello_mpi`¡C
+   é€™æœƒç”Ÿæˆå¯åŸ·è¡Œæª”æ¡ˆ `hello_mpi`ã€‚
 
 ---
 
-### ¨BÆJ 7¡G¹B¦æ MPI µ{¦¡
-1. **¹B¦æ MPI µ{¦¡**¡G
+### æ­¥é©Ÿ 7ï¼šé‹è¡Œ MPI ç¨‹å¼
+1. **é‹è¡Œ MPI ç¨‹å¼**ï¼š
 
-   ¶i¦æ MPI ¹B¦æ¡A¨Ï¥Î¥H¤U©R¥O¨Ó±Ò°Ê¦h­Ó®e¾¹¤¤ªº¶iµ{¡G
+   é€²è¡Œ MPI é‹è¡Œï¼Œä½¿ç”¨ä»¥ä¸‹å‘½ä»¤ä¾†å•Ÿå‹•å¤šå€‹å®¹å™¨ä¸­çš„é€²ç¨‹ï¼š
 
    ```bash
    mpirun -np 3 --host mpi_container_1,mpi_container_2,mpi_container_3 ./hello_mpi
    ```
 
-   ³o·|±Ò°Ê¤T­Ó¶iµ{¡A¤À§O¦b `mpi_container_1`¡B`mpi_container_2` ©M `mpi_container_3` ¤W°õ¦æ¡C
+   é€™æœƒå•Ÿå‹•ä¸‰å€‹é€²ç¨‹ï¼Œåˆ†åˆ¥åœ¨ `mpi_container_1`ã€`mpi_container_2` å’Œ `mpi_container_3` ä¸ŠåŸ·è¡Œã€‚
 
 ---
 
-### ¨BÆJ 8¡G¸Ñ¨M¹J¨ìªº°ÝÃD
-±z¥Ø«e¹J¨ìªº°ÝÃD¬OÅã¥Üªº°T®§¬°¡G
+### æ­¥é©Ÿ 8ï¼šè§£æ±ºé‡åˆ°çš„å•é¡Œ
+æ‚¨ç›®å‰é‡åˆ°çš„å•é¡Œæ˜¯é¡¯ç¤ºçš„è¨Šæ¯ç‚ºï¼š
 
 ```
 Hello from process 0 of 1
@@ -163,27 +163,25 @@ Hello from process 0 of 1
 Hello from process 0 of 1
 ```
 
-³oªí©ú±zÁöµM±Ò°Ê¤F¤T­Ó®e¾¹¡A¦ý©Ò¦³¶iµ{³£¹B¦æ¦b¦P¤@­Ó®e¾¹¤¤¡]¶iµ{ `0`¡^¡A³o¬O¦]¬° MPI ¨S¦³¥¿½T¦aÃÑ§O¥X®e¾¹¤§¶¡ªº¤À§G¡C
+é€™è¡¨æ˜Žæ‚¨é›–ç„¶å•Ÿå‹•äº†ä¸‰å€‹å®¹å™¨ï¼Œä½†æ‰€æœ‰é€²ç¨‹éƒ½é‹è¡Œåœ¨åŒä¸€å€‹å®¹å™¨ä¸­ï¼ˆé€²ç¨‹ `0`ï¼‰ï¼Œé€™æ˜¯å› ç‚º MPI æ²’æœ‰æ­£ç¢ºåœ°è­˜åˆ¥å‡ºå®¹å™¨ä¹‹é–“çš„åˆ†ä½ˆã€‚
 
-**­ì¦]**¡G³o³q±`¬O¥Ñ©ó¥H¤U´X­Ó­ì¦]³y¦¨ªº¡G
-1. **MPI ¥¼¥¿½T±Ò°Ê¦h®e¾¹**¡G¥i¯à¬O¦]¬°®e¾¹¤§¶¡ªº³q«H¥¼³]¸m¥¿½T¡C
-2. **MPI ¦b³æ¤@®e¾¹¤¤¹B¦æ**¡G±z¥i¯à¦b¨C­Ó®e¾¹¤¤¤À§O±Ò°Ê¤F MPI µ{¦¡¡A¦ý MPI Àq»{¥u¹B¦æ¤@­Ó¶iµ{¡]³q±`¬O¶iµ{ `0`¡^¡C
-3. **ºôµ¸°t¸m°ÝÃD**¡G®e¾¹¤§¶¡ªººôµ¸°t¸m¥i¯à¤£¥¿½T¡A¾É­P MPI µLªk¸ó®e¾¹±Ò°Ê¦h­Ó¶iµ{¡C
+**åŽŸå› **ï¼šé€™é€šå¸¸æ˜¯ç”±æ–¼ä»¥ä¸‹å¹¾å€‹åŽŸå› é€ æˆçš„ï¼š
+1. **MPI æœªæ­£ç¢ºå•Ÿå‹•å¤šå®¹å™¨**ï¼šå¯èƒ½æ˜¯å› ç‚ºå®¹å™¨ä¹‹é–“çš„é€šä¿¡æœªè¨­ç½®æ­£ç¢ºã€‚
+2. **MPI åœ¨å–®ä¸€å®¹å™¨ä¸­é‹è¡Œ**ï¼šæ‚¨å¯èƒ½åœ¨æ¯å€‹å®¹å™¨ä¸­åˆ†åˆ¥å•Ÿå‹•äº† MPI ç¨‹å¼ï¼Œä½† MPI é»˜èªåªé‹è¡Œä¸€å€‹é€²ç¨‹ï¼ˆé€šå¸¸æ˜¯é€²ç¨‹ `0`ï¼‰ã€‚
+3. **ç¶²çµ¡é…ç½®å•é¡Œ**ï¼šå®¹å™¨ä¹‹é–“çš„ç¶²çµ¡é…ç½®å¯èƒ½ä¸æ­£ç¢ºï¼Œå°Žè‡´ MPI ç„¡æ³•è·¨å®¹å™¨å•Ÿå‹•å¤šå€‹é€²ç¨‹ã€‚
 
-### ¸Ñ¨M¤èªk¡G
-1. **ÀË¬d®e¾¹ªºª¬ºA**¡G½T«O©Ò¦³®e¾¹³£¦b¹B¦æ¡]¨Ï¥Î `docker ps` ½T»{¡^¡C
-2. **ÀË¬d MPI °t¸m**¡G
-   - ½T«O®e¾¹¤§¶¡¯à¤¬¬Û³X°Ý¡C
-   - ÀË¬d¬O§_¦³¨¾¤õÀð©Î¦w¥þ³]¸mªý¤î®e¾¹¤§¶¡ªº³q«H¡C
-3. **¨Ï¥Î¥¿½Tªº©R¥O¹B¦æ MPI**¡G¨Ï¥Î `mpirun` ©Î `mpiexec` ¨Ã½T«O«ü©w®e¾¹¦WºÙ¡A¦p¤W­±¨BÆJ©Ò¥Ü¡C
-
----
-
-### ¤U¤@¨B¡G
-1. ÀË¬d®e¾¹¹B¦æª¬ºA¨Ã½T«O®e¾¹¤§¶¡¯à°÷³q«H¡C
-2. ÀË¬d®e¾¹¤é»x¡A§ä¥X¬°¤°»ò MPI µ{¦¡¦b¦h®e¾¹¤§¶¡¥¼¥¿½T¹B¦æ¡C
-3. ¦A¦¸¹Á¸Õ¹B¦æ MPI µ{¦¡¡A½T«O¨Ï¥Î¥¿½Tªº `mpirun` ©R¥O¨Ó±Ò°Ê¦h­Ó®e¾¹¤¤ªº¶iµ{¡C
+### è§£æ±ºæ–¹æ³•ï¼š
+1. **æª¢æŸ¥å®¹å™¨çš„ç‹€æ…‹**ï¼šç¢ºä¿æ‰€æœ‰å®¹å™¨éƒ½åœ¨é‹è¡Œï¼ˆä½¿ç”¨ `docker ps` ç¢ºèªï¼‰ã€‚
+2. **æª¢æŸ¥ MPI é…ç½®**ï¼š
+   - ç¢ºä¿å®¹å™¨ä¹‹é–“èƒ½äº’ç›¸è¨ªå•ã€‚
+   - æª¢æŸ¥æ˜¯å¦æœ‰é˜²ç«ç‰†æˆ–å®‰å…¨è¨­ç½®é˜»æ­¢å®¹å™¨ä¹‹é–“çš„é€šä¿¡ã€‚
+3. **ä½¿ç”¨æ­£ç¢ºçš„å‘½ä»¤é‹è¡Œ MPI**ï¼šä½¿ç”¨ `mpirun` æˆ– `mpiexec` ä¸¦ç¢ºä¿æŒ‡å®šå®¹å™¨åç¨±ï¼Œå¦‚ä¸Šé¢æ­¥é©Ÿæ‰€ç¤ºã€‚
 
 ---
 
-³o¬O§¹¾ãªº¨BÆJ©M¤@¨Ç±Æ¬d¤èªk¡AÀ°§U±zÄ~Äò¶i¦æ MPI µ{¦¡ªº½sÄ¶©M°õ¦æ¡C¦p¦³¥ô¦ó°ÝÃD¡A½ÐÀH®É´£¨Ñ§ó¦h«H®§¡A§Ú±NÀ°§U±z¸Ñ¨M¡C
+### ä¸‹ä¸€æ­¥ï¼š
+1. æª¢æŸ¥å®¹å™¨é‹è¡Œç‹€æ…‹ä¸¦ç¢ºä¿å®¹å™¨ä¹‹é–“èƒ½å¤ é€šä¿¡ã€‚
+2. æª¢æŸ¥å®¹å™¨æ—¥èªŒï¼Œæ‰¾å‡ºç‚ºä»€éº¼ MPI ç¨‹å¼åœ¨å¤šå®¹å™¨ä¹‹é–“æœªæ­£ç¢ºé‹è¡Œã€‚
+3. å†æ¬¡å˜—è©¦é‹è¡Œ MPI ç¨‹å¼ï¼Œç¢ºä¿ä½¿ç”¨æ­£ç¢ºçš„ `mpirun` å‘½ä»¤ä¾†å•Ÿå‹•å¤šå€‹å®¹å™¨ä¸­çš„é€²ç¨‹ã€‚
+
+---
