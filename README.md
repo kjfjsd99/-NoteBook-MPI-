@@ -135,8 +135,7 @@ opencv_core_parallel_tbb460_64d.dll
 opencv_core_parallel_openmp460_64d.dll
 */
 
-
-
+```cpp
 #include <iostream>
 #include <opencv2/opencv.hpp>
 #include "mpi.h"
@@ -279,7 +278,7 @@ int main(int argc, char** argv) {
     MPI_Finalize();
     return 0;
 }
-
+'''
 
 關鍵概念：
 
