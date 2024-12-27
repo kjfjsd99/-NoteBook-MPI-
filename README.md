@@ -126,15 +126,16 @@
 
 ---
 
-
 /**
-main.cpp中可使用的程式碼
+## 附錄步驟: main.cpp中可使用的程式碼
 使用 opencv-4.6.0-vc14_vc15
 這版的 opencv, 缺少了一些 DLL文件:
 opencv_core_parallel_onetbb460_64d.dll
 opencv_core_parallel_tbb460_64d.dll
 opencv_core_parallel_openmp460_64d.dll
 */
+
+
 
 #include <iostream>
 #include <opencv2/opencv.hpp>
