@@ -1,187 +1,127 @@
-"# 在NoteBook上執行MPI程式筆記" 
-這份筆記將包括從頭開始編寫 MPI 程式的步驟。
+"# 在NoteBook(Windows)上執行MPI程式筆記" 
+這份筆記將包括從頭開始編寫 MPI 程式的步驟。從安裝 Microsoft MPI 到成功運行 MPI 程式的完整流程
 
 ---
 
-### 步驟 1：註冊並進入 Play with Docker
-1. **註冊和登錄**
-   - 訪問 [Play with Docker](https://labs.play-with-docker.com/) 網站。
-   - 使用您的 **Google 帳號** 進行登錄。
+# 從安裝 Microsoft MPI 到成功運行 MPI 程式的完整流程  
 
-2. **創建新實驗**
-   - 登錄後點選 **"Start a new session"**。
-   - 創建一個新實驗並獲取終端。
+## 步驟 1: 安裝 Microsoft MPI  
 
----
+1. **下載 MS-MPI**  
+   - 前往 Microsoft 官方網站，搜尋「Microsoft MPI」，或者直接訪問 [MS-MPI 官方下載頁面](https://learn.microsoft.com/en-us/message-passing-interface/microsoft-mpi)。  
+   - 下載最新版本的 MS-MPI 安裝程式。  
 
-### 步驟 2：創建並設置 Docker 網絡
-MPI 需要容器之間的互聯，為此需要創建一個自定義的 Docker 網絡。
-
-1. 在終端輸入以下命令來創建網絡：
-
-   ```bash
-   docker network create mpi_network
-   ```
-
-   如果這一步成功，您會看到類似以下的訊息：
-   ```
-   mpi_network
-   ```
+2. **安裝 MS-MPI**  
+   - 執行下載的安裝檔，按照指示完成安裝。  
+   - 記下安裝路徑（通常是 `C:\Program Files (x86)\Microsoft SDKs\MPI`）。  
 
 ---
 
-### 步驟 3：下載 MPI Docker 映像
-在 Docker 中運行 MPI 程式之前，需要使用適合的 MPI 映像。您選擇了 `mfisherman/openmpi` 這個映像。
+## 步驟 2: 安裝 Visual Studio  
 
-1. 下載 MPI Docker 映像：
+1. **下載 Visual Studio**  
+   - 前往 Visual Studio 官方網站，下載最新版本的 Visual Studio 社群版（Community，免費）。  
 
-   ```bash
-   docker pull mfisherman/openmpi
-   ```
-
-   這會從 Docker Hub 拉取 `mfisherman/openmpi` 映像。
+2. **安裝 Visual Studio**  
+   - 安裝過程中，選擇「使用 C++ 的桌面開發」工作負載，以確保擁有必須的編譯工具和函式庫。  
 
 ---
 
-### 步驟 4：創建和運行 MPI 容器
-接下來，您需要創建並運行幾個容器，讓它們互相連接，並執行 MPI 程式。
+## 步驟 3: 建立新的 C++ 專案  
 
-1. **創建並運行三個 MPI 容器**：
-   
-   輸入以下命令來運行三個容器，並確保它們都加入相同的網絡。
+1. **開啟 Visual Studio**  
+   - 啟動 Visual Studio。  
 
-   ```bash
-   docker run -d --name mpi_container_1 --network mpi_network mfisherman/openmpi
-   docker run -d --name mpi_container_2 --network mpi_network mfisherman/openmpi
-   docker run -d --name mpi_container_3 --network mpi_network mfisherman/openmpi
-   ```
-
-2. 如果容器啟動成功，您應該會看到容器 ID（如 `32c0cd9ccccb...`）的輸出。
-
-3. **檢查容器狀態**：
-   
-   使用以下命令來查看容器是否運行：
-
-   ```bash
-   docker ps
-   ```
-
-   這應該顯示出三個運行中的容器。如果沒有，請使用以下命令查看所有容器（包括已停止的容器）：
-
-   ```bash
-   docker ps -a
-   ```
-
-   若容器未運行，查看容器日誌來找出錯誤：
-
-   ```bash
-   docker logs <container_name>
-   ```
-
-   這樣能幫助您查看容器啟動過程中的錯誤信息。
+2. **建立新專案**  
+   - 點選「檔案」 > 「新增」 > 「專案」。  
+   - 選擇「C++」分類下的「主控台應用程式」，然後按下「下一步」。  
+   - 為專案命名（例如 `MPIExample`），選擇存放位置，然後按下「建立」。  
 
 ---
 
-### 步驟 5：編寫簡單的 MPI 程式
-如果您沒有 MPI 程式，這裡提供一個簡單的 **Hello World** 程式範例，您可以用它來測試您的 MPI 環境。
+## 步驟 4: 新增程式碼檔案  
 
-1. **創建 `hello_mpi.c` 程式**：
+1. **新增 C++ 檔案**  
+   - 在右側的「方案總管」中找到你的專案名稱（例如 `MPIExample`）。  
+   - 右鍵點選 **`Source Files`** 資料夾，選擇「新增」 > 「新項目」。  
+   - 選擇「C++ 檔案（.cpp）」，命名為 `main.cpp`，然後按下「確定」。  
 
-   進入任何一個容器，並創建一個新的 C 程式 `hello_mpi.c`：
+2. **輸入程式碼**  
+   - 打開 `main.cpp`，輸入以下程式碼：  
 
-   ```bash
-   docker exec -it mpi_container_1 bash
-   nano hello_mpi.c
-   ```
+     ```cpp
+     #include <mpi.h>
+     #include <stdio.h>
 
-   然後輸入以下簡單的 MPI 程式碼：
-
-   ```c
-   #include <stdio.h>
-   #include <mpi.h>
-
-   int main(int argc, char *argv[]) {
-       int rank, size;
-
-       // 初始化 MPI
-       MPI_Init(&argc, &argv);
-       
-       // 獲取當前進程的 rank 和總進程數量
-       MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-       MPI_Comm_size(MPI_COMM_WORLD, &size);
-
-       // 每個進程打印自己的訊息
-       printf("Hello from process %d of %d\n", rank, size);
-
-       // 結束 MPI
-       MPI_Finalize();
-       
-       return 0;
-   }
-   ```
-
-   這個程式將會初始化 MPI 環境，並讓每個進程打印出其 `rank`（進程編號）和總進程數量 `size`。
-
-2. **保存並退出**：
-   - 按 `Ctrl + X` 保存並退出 `nano` 編輯器。
+     int main(int argc, char* argv[]) {
+         MPI_Init(&argc, &argv);
+         int rank;
+         MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+         printf("Hello from process %d\n", rank);
+         MPI_Finalize();
+         return 0;
+     }
+     ```  
 
 ---
 
-### 步驟 6：編譯 MPI 程式
-1. **編譯程式**：
+## 步驟 5: 設定專案屬性  
 
-   在容器中編譯 `hello_mpi.c` 程式：
+1. **打開專案屬性**  
+   - 在方案總管中，右鍵點選專案名稱（例如 `MPIExample`），選擇「屬性」。  
 
-   ```bash
-   mpicc hello_mpi.c -o hello_mpi
-   ```
+2. **設定「包含目錄」**  
+   - 在左側的「C/C++」 > 「一般」中，找到「附加包含目錄」，然後新增以下路徑：  
+     ```
+     C:\Program Files (x86)\Microsoft SDKs\MPI\Include
+     ```  
 
-   這會生成可執行檔案 `hello_mpi`。
+3. **設定「附加函式庫目錄」**  
+   - 在左側的「連結器」 > 「一般」中，找到「附加函式庫目錄」，新增以下路徑：  
+     ```
+     C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64
+     ```  
 
----
-
-### 步驟 7：運行 MPI 程式
-1. **運行 MPI 程式**：
-
-   進行 MPI 運行，使用以下命令來啟動多個容器中的進程：
-
-   ```bash
-   mpirun -np 3 --host mpi_container_1,mpi_container_2,mpi_container_3 ./hello_mpi
-   ```
-
-   這會啟動三個進程，分別在 `mpi_container_1`、`mpi_container_2` 和 `mpi_container_3` 上執行。
-
----
-
-### 步驟 8：解決遇到的問題
-您目前遇到的問題是顯示的訊息為：
-
-```
-Hello from process 0 of 1
-Hello from process 0 of 1
-Hello from process 0 of 1
-Hello from process 0 of 1
-```
-
-這表明您雖然啟動了三個容器，但所有進程都運行在同一個容器中（進程 `0`），這是因為 MPI 沒有正確地識別出容器之間的分佈。
-
-**原因**：這通常是由於以下幾個原因造成的：
-1. **MPI 未正確啟動多容器**：可能是因為容器之間的通信未設置正確。
-2. **MPI 在單一容器中運行**：您可能在每個容器中分別啟動了 MPI 程式，但 MPI 默認只運行一個進程（通常是進程 `0`）。
-3. **網絡配置問題**：容器之間的網絡配置可能不正確，導致 MPI 無法跨容器啟動多個進程。
-
-### 解決方法：
-1. **檢查容器的狀態**：確保所有容器都在運行（使用 `docker ps` 確認）。
-2. **檢查 MPI 配置**：
-   - 確保容器之間能互相訪問。
-   - 檢查是否有防火牆或安全設置阻止容器之間的通信。
-3. **使用正確的命令運行 MPI**：使用 `mpirun` 或 `mpiexec` 並確保指定容器名稱，如上面步驟所示。
+4. **新增依賴的函式庫**  
+   - 在左側的「連結器」 > 「輸入」中，找到「附加相依性」，新增以下內容：  
+     ```
+     msmpi.lib
+     ```  
 
 ---
 
-### 下一步：
-1. 檢查容器運行狀態並確保容器之間能夠通信。
-2. 檢查容器日誌，找出為什麼 MPI 程式在多容器之間未正確運行。
-3. 再次嘗試運行 MPI 程式，確保使用正確的 `mpirun` 命令來啟動多個容器中的進程。
+## 步驟 6: 建置專案  
+
+1. **建置方案**  
+   - 在上方功能列中，選擇「建置」 > 「建置方案」，或者按下快捷鍵 `Ctrl + Shift + B`。  
+   - 確認建置完成且沒有錯誤訊息。  
+
+---
+
+## 步驟 7: 執行 MPI 程式  
+
+1. **開啟命令提示字元**  
+   - 按下 `Win + R`，輸入 `cmd`，按下 Enter 開啟命令提示字元。  
+
+2. **導航到執行檔所在資料夾**  
+   - 使用 `cd` 指令切換到專案的執行檔所在資料夾，例如：  
+     ```bash
+     cd /d E:\Parallel Computing\MPIExample\x64\Debug
+     ```  
+
+3. **執行 MPI 程式**  
+   - 使用以下指令執行程式：  
+     ```bash
+     mpiexec -n 4 MPIExample.exe
+     ```  
+
+4. **確認執行結果**  
+   - 正常情況下，你應該看到以下輸出：  
+     ```text
+     Hello from process 0
+     Hello from process 1
+     Hello from process 2
+     Hello from process 3
+     ```  
 
 ---
